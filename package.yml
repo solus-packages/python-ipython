@@ -1,0 +1,23 @@
+name       : python-ipython
+version    : 5.5.0
+release    : 1
+source     :
+    - https://github.com/ipython/ipython/archive/5.5.0.tar.gz : 6f8599468ffd7b21281f711f387f9f3b6e30ae8163e0159c4aaf83c5bc5ed586
+license    : BSD-3-Clause
+component  : programming.python
+summary    : IPython provides a rich toolkit to help you make the most of using Python interactively.
+description: |
+    IPython provides a rich toolkit to help you make the most of using Python interactively.
+rundeps    :
+    - pygments
+    - python-decorator
+    - python-pexpect
+    - python-pickleshare
+    - python-prompt-toolkit
+    - python-simplegeneric
+    - python-traitlets
+build      : |
+    %python_setup
+install    : |
+    %python_install
+    rm $installdir/usr/bin/iptest2 && rm $installdir/usr/bin/ipython2
